@@ -1,5 +1,6 @@
 import random
 import threading
+from os import getcwd
 from Alert import Alert                                                 # for giving notification 
 from co_brain import Edith                                              # for calling brain 
 from internet_check import is_Online                                    
@@ -7,8 +8,8 @@ from TextToSpeech.F_DF_TTS import speak                                 # for Sp
 from Data.DLG_Data import online_dlg,offline_dlg                        # for a massage online,ofline 
 from Time_operations.through_Alert import check_schedule,check_Alam
 
-Alam_path = r"C:\Users\bisha\Desktop\EDITH\Alarm_Data.txt"
-file_path = r'C:\Users\bisha\Desktop\EDITH\schedule.txt'
+Alam_path = f"{getcwd()}\\Alarm_Data.txt"
+file_path = f"{getcwd()}\\schedule.txt"
 
 ran_online_dlg = random.choice(online_dlg)
 ran_offline_dlg =random.choice(offline_dlg)

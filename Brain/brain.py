@@ -1,6 +1,7 @@
-from webscout import PhindSearch as brain
+from os import getcwd
 from rich import print
 from webscout.AIutel import RawDog
+from webscout import PhindSearch as brain
 
 rawdog = RawDog()
 intro_prompt = rawdog.intro_prompt
@@ -10,7 +11,7 @@ ai = brain(
     max_tokens=800,
     timeout=30,
     intro=intro_prompt,
-    filepath=r"C:\Users\bisha\Desktop\EDITH\chat_history.txt",
+    filepath = f"{getcwd()}\\chat_history.txt",
     update_file=True,
     proxies={},
     history_offset=10250,
