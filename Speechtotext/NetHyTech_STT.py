@@ -13,7 +13,7 @@ chrome_options.add_argument("--use-fake-ui-for-media-stream")
 chrome_options.add_argument("--headless=new")  # Remove this if you want to see the browser UI
 
 # Manually set the path to the ChromeDriver executable
-chrome_driver_path = r"C:\Users\bisha\Desktop\AI-EDITH\chromedriver.exe"
+chrome_driver_path = f"{getcwd()}\\chromedriver.exe"
 service = Service(executable_path=chrome_driver_path)
 
 # Setting up the Chrome driver with the service and options

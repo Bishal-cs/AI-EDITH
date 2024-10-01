@@ -12,8 +12,6 @@ winotify
 
 lxml_html_clean
 
-pyaudio == 1.2.2
-
 gradio_client
 
 colorlog
@@ -35,4 +33,6 @@ pywhatkit
 wmi
 
 scipy
+
+webdriver_manager
 

@@ -26,7 +26,7 @@ async def amain(text, output_file) -> None:
         playback_thread.start()
         playback_thread.join()
     except Exception as e:
-        print(e)
+        print
     finally:
         remove_file(output_file)
 

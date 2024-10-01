@@ -1,9 +1,9 @@
-import random
 import threading
 from Vision.PC_Cam import *
 from Features.Run_app import *
 from Brain.brain import Main_Brain
 from Device_info.info import get_info
+from Features.Brightness_set import *
 from Features.control_volume import *
 from TextToSpeech.F_DF_TTS import speak
 from Features.Mic_health import mic_health
@@ -11,13 +11,10 @@ from Features.create_file import create_file
 from Speechtotext.NetHyTech_STT import listen
 from Whatsapp_automation.wa import send_msg_wa
 from Features.AI_Image_gen import generate_image
-from Features.Brightness_set import *
-from Features.speaker_test import speaker_health_test
 from Weather_check.Check__weather import get_weather_by_address
 from Features.check_internet_speed import get_internet_speed
 from Time_operations.Brain import input_manage,input_manage_Alam
 from Automation.automation_brain import Auto_main_brain,clear_file
-
 
 numbers = ["1:","2:","3:","4:","5:","6:","7:","8:","9:"]
 spl_numbers = ["11:","12:"]

@@ -6,7 +6,7 @@ import sys
 import time
 import threading
 
-def generate_audio(message: str,voice : str = "en-IN-Wavenet-A"):
+def generate_audio(message: str,voice : str = "en-US-Standard-C"):
     url: str = f"https://api.streamelements.com/kappa/v2/speech?voice={voice}&text={{{message}}}"
 
     headers = {'User-Agent':'Mozilla/5.0(Maciontosh;intel Mac OS X 10_15_7)AppleWebKit/537.36(KHTML,like Gecoko)Chrome/119.0.0.0 Safari/537.36'}
@@ -24,7 +24,7 @@ def print_animated_message(message):
         time.sleep(0.050)  # Adjust the sleep duration for the animation speed
     print()
 
-def Co_speak(message: str, voice: str = "en-IN-Wavenet-A", folder: str = "", extension: str = ".mp3") -> Union[None,str]:
+def Co_speak(message: str, voice: str = "en-US-Standard-C", folder: str = "", extension: str = ".mp3") -> Union[None,str]:
     try:
         result_content = generate_audio(message,voice)
         file_path = os.path.join(folder,f"{voice}{extension}")
