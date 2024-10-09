@@ -1,15 +1,12 @@
-from webscout.AIutel import RawDog
-from webscout import PhindSearch as brain
+from webscout import DeepInfra
 
-rawdog = RawDog()
-intro_prompt = rawdog.intro_prompt
-
-ai = brain(
+ai = DeepInfra(
     is_conversation=True,
+    model= "Qwen/Qwen2-72B-Instruct",
     max_tokens=800,
     timeout=30,
-    intro=intro_prompt,
-    filepath = r"C:\Users\bisha\Desktop\AI-EDITH\chat_history.txt",
+    intro= "EDITH",
+    filepath= r"C:\Users\bisha\Desktop\AI-EDITH\conv_history.txt",
     update_file=True,
     proxies={},
     history_offset=10250,
@@ -17,8 +14,5 @@ ai = brain(
 )
 
 def Main_Brain(text):
-    response = ai.chat(text)
-    rawdog_feedback = rawdog.main(response)
-    if rawdog_feedback:
-        ai.chat(rawdog_feedback)
-    return response
+    r = ai.chat(text)
+    return r

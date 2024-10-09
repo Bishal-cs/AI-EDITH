@@ -12,7 +12,6 @@ from Speechtotext.NetHyTech_STT import listen
 from Whatsapp_automation.wa import send_msg_wa
 from Features.AI_Image_gen import generate_image
 from Weather_check.Check__weather import get_weather_by_address
-from Features.check_internet_speed import get_internet_speed
 from Time_operations.Brain import input_manage,input_manage_Alam
 from Automation.automation_brain import Auto_main_brain,clear_file
 
@@ -52,16 +51,11 @@ def check_inputs():
                            input_manage_Alam(output_text)
                            clear_file()
 
-            elif "check internet speed" in output_text:
-                speak("checking your internet speed")
-                speed = get_internet_speed()
-                speak(f"the device is running on {speed} Mbps internet speed")
-                print(f"the device is running on {speed} Mbps internet speed")
-
             elif "edit" in output_text or "hey edit" in output_text or "edith" in output_text:
                 response = Main_Brain(output_text)
+                print(response)
                 speak(response)
-
+                
             elif output_text.startswith("create"):
                 if "file" in output_text:
                     create_file(output_text)

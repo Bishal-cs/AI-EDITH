@@ -1,4 +1,3 @@
-import os
 from os import getcwd
 from winotify import Notification, audio # pip install winotify
 
