@@ -7,7 +7,9 @@ import threading
 # Voice = "bn-IN-TanishaaNeural"
 # Voice = "ml-IN-SobhanaNeural" 
 # Voice = "en-IN-NeerjaNeural" 
-Voice = "en-US-JennyNeural"
+Voice = "en-US-AriaNeural"
+# Voice = "en-US-MichelleNeural"
+# Voice = "en-US-JennyNeural"
 BUFFER_SIZE = 1024
 
 def remove_file(file_path):

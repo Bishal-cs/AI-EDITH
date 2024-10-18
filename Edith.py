@@ -38,3 +38,4 @@ def main():
     else:
         print(ran_offline_dlg)
         Alert(ran_offline_dlg)
+main()

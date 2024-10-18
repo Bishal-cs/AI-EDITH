@@ -1,4 +1,5 @@
 import threading
+from os import getcwd
 from Vision.PC_Cam import *
 from Features.Run_app import *
 from Brain.brain import Main_Brain
@@ -17,6 +18,7 @@ from Automation.automation_brain import Auto_main_brain,clear_file
 
 numbers = ["1:","2:","3:","4:","5:","6:","7:","8:","9:"]
 spl_numbers = ["11:","12:"]
+
 
 def check_inputs():
     output_text = ""
