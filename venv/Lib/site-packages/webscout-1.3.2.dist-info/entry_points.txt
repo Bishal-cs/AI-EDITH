@@ -1,0 +1,6 @@
+[console_scripts]
+WEBS = webscout.cli:cli
+webscout-ai = webscout.AI:cli
+webscout-ai-phindsearch = webscout.AI:phindsearch
+webscout-ai-yepchat = webscout.AI:yepchat
+webscout-llm = webscout.LLM:chat
