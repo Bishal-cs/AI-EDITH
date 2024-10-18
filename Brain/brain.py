@@ -1,5 +1,6 @@
 import os
-from webscout import DeepInfra
+import time 
+from webscout import PhindSearch
 
 history_file = r"C:\Users\bisha\Desktop\AI-EDITH\chat_history.txt"
 
@@ -16,9 +17,8 @@ def save_history(history):
 # Load existing history
 conversation_history = load_history()
 
-ai = DeepInfra(
+ai = PhindSearch(
     is_conversation=True,
-    model= "Qwen/Qwen2-72B-Instruct",
     max_tokens=800,
     timeout=30,
     intro= None,
@@ -41,8 +41,7 @@ def Main_Brain(text):
     response_chunks = []
     for chunk in ai.chat(full_prompt):
         response_chunks.append(chunk)
-        print(chunk, end="", flush=True)
-    
+        
     # Combine the response chunks into a single response
     response_text = "".join(response_chunks)
     

@@ -19,7 +19,6 @@ from Automation.automation_brain import Auto_main_brain,clear_file
 numbers = ["1:","2:","3:","4:","5:","6:","7:","8:","9:"]
 spl_numbers = ["11:","12:"]
 
-
 def check_inputs():
     output_text = ""
     while True:
@@ -57,7 +56,7 @@ def check_inputs():
                 response = Main_Brain(output_text)
                 print(response)
                 speak(response)
-                
+
             elif output_text.startswith("create"):
                 if "file" in output_text:
                     create_file(output_text)
