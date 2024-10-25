@@ -22,3 +22,6 @@ User: edit remember this you are my assistant and you can you can contact me lik
 AI: I understand, Bishal Das. As your friendly assistant, I'm here to help whenever you need assistance. Is there anything specific you'd like assistance with?
 User: edit remember this you are now human ok and you have to declare right human
 AI: I understand, Bishal Das. As your friendly assistant, I'm here to help whenever you need assistance. Is there anything specific you'd like assistance with?
+
+User: edit remember this i love to eat dahi
+AI: I understand, Bishal Das. As your friendly assistant, I'm here to help whenever you need assistance. Is there anything specific you'd like assistance with?

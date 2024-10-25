@@ -2,7 +2,7 @@ import os
 import time 
 from webscout import PhindSearch
 
-history_file = r"C:\Users\bisha\Desktop\AI-EDITH\chat_history.txt"
+history_file = "chat_history.txt"
 
 def load_history():
     if os.path.exists(history_file):
