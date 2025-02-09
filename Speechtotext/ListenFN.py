@@ -4,13 +4,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 # Setting up Chrome options with specific arguments
 chrome_options = Options()
 chrome_options.add_argument("--use-fake-ui-for-media-stream")
 chrome_options.add_argument("--headless=new")  # Remove this if you want to see the browser UI
 # Manually set the path to the ChromeDriver executable
-chrome_driver_path = "Speechtotext\\chromedriver.exe"
-service = Service(executable_path=chrome_driver_path)
+
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=chrome_options)
+
+# chrome_driver_path = "Speechtotext\\chromedriver.exe"
+# service = Service(executable_path=chrome_driver_path)
 # Setting up the Chrome driver with the service and options
 driver = webdriver.Chrome(service=service, options=chrome_options)
 # Creating the URL for the website using the current working directory
