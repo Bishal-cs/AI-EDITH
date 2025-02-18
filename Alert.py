@@ -7,7 +7,7 @@ def Alert(Text):
         title = "Alert",
         msg = Text,
         duration ="short",
-        icon = getcwd() + r"\logo.png"
+        icon = getcwd() + r"C:\Users\bisha\Desktop\AI-EDITH\Data\logo.png"
     )
     toaster.set_audio(audio.Default, loop = False)
 
@@ -15,3 +15,6 @@ def Alert(Text):
     toaster.add_actions(label = "Dismiss", launch = "")
 
     toaster.show()
+
+if __name__ == "__main__":
+    Alert("Hello")

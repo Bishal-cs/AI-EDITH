@@ -1,55 +1,100 @@
-import os
-import time 
-from webscout import PhindSearch
+import subprocess 
+try:
+    from groq import Groq
+except ImportError:
+    subprocess.run("pip install groq")
+    from groq import Groq
+from json import load, dump
+import datetime
 
-history_file = "chat_history.txt"
+Username = "Bishal Das"
+Assistantname = "EDITH"
+GroqAPIKey = "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"
 
-def load_history():
-    if os.path.exists(history_file):
-        with open(history_file, 'r') as file:
-            return file.read()
-    return ""
+client = Groq(api_key=GroqAPIKey)
 
-def save_history(history):
-    with open(history_file, 'w') as file:
-        file.write(history)
+messages = []
 
-# Load existing history
-conversation_history = load_history()
+System = f"""Hello, I am {Username}, You are a very accurate and advanced AI chatbot named {Assistantname} which also has real-time up-to-date information from the internet.
+*** Do not tell time until I ask, do not talk too much, just answer the question.***
+*** Reply in only English, even if the question is in Hindi, reply in English.***
+*** Do not provide notes in the output, just answer the question and never mention your training data. ***
+"""
 
-ai = PhindSearch(
-    is_conversation=True,
-    max_tokens=800,
-    timeout=30,
-    intro= None,
-    filepath= None,
-    update_file= False, 
-    proxies={},
-    history_offset=10250,
-    act=None,
-)
+SystemChatbot = [
+    {"role": "system", "content": System}
+]
 
-def Main_Brain(text):
-    conversation_history = load_history()
-    # Append the prompt to the conversation history
-    conversation_history += f"\nUser: {text}"
+try: 
+    with open(r"Data\ChatLog.json", "r") as f:
+        messages = load(f)
+except FileNotFoundError:
+    with open(r"Data\ChatLog.json", "w") as f:
+        dump([], f)
+
+def RealtimeInformation():
+    current_date_time = datetime.datetime.now()
+    day = current_date_time.strftime("%A")      
+    date = current_date_time.strftime("%d")
+    month = current_date_time.strftime("%B")
+    year = current_date_time.strftime("%Y")
+    hour = current_date_time.strftime("%I")
+    minute = current_date_time.strftime("%M")
+    second = current_date_time.strftime("%S")
+
+    data = f"Please use this rea;-time information if needed,\n"
+    data += f"Day: {day}\nDate: {date}\nMonth: {month}\nYear: {year}\n"
+    data += f"Time: {hour} hours : {minute} minutes : {second} seconds\n"
+
+    return data
+
+def AnswerModifier(Answer):
+    lines = Answer.split("\n")
+    non_empty_lines = [line for line in lines if line.strip()]
+    modified_answer = '\n'.join(non_empty_lines)
     
-    # Generate the full prompt including the conversation history
-    full_prompt = conversation_history + "\nAI:"
-    
-    # Get the AI's response
-    response_chunks = []
-    for chunk in ai.chat(full_prompt):
-        response_chunks.append(chunk)
+    return modified_answer
+
+def ChatBot(Query):
+    """This function send the user's query to the chatbot and returns the AI's response."""
+    try:
+        with open(r"Data\ChatLog.json", "r") as f:
+            messages = load(f)
         
-    # Combine the response chunks into a single response
-    response_text = "".join(response_chunks)
-    
-    # Append the AI's response to the conversation history
-    conversation_history += f"\nAI: {response_text}"
-    
-    # Check if the user input contains "remember this"
-    if "remember this" in text.lower():
-        # Save the updated conversation history
-        save_history(conversation_history)
-    return response_text
+        messages.append({"role": "user", "content": f"{Query}"})
+        
+        completion = client.chat.completions.create(
+            model = "llama3-70b-8192",
+            messages = SystemChatbot + [{"role": "system", "content": RealtimeInformation()}] + messages,
+            max_tokens=1024,
+            temperature = 0.7,
+            top_p = 1,
+            stream=True,
+            stop=None
+        )
+
+        Answer = ""
+
+        for chunk in completion:
+            if chunk.choices[0].delta.content:
+                Answer += chunk.choices[0].delta.content
+        
+        Answer = Answer.replace("</s>", "")
+
+        messages.append({"role": "assistant", "content": Answer})
+
+        with open(r"Data\ChatLog.json", "w") as f:
+            dump(messages, f, indent=4)
+
+        return AnswerModifier(Answer=Answer)
+
+    except Exception as e:
+        print(f"Error: {e}")
+        with open(r"Data\ChatLog.json", "w") as f:
+            dump([], f, indent=4)
+        return ChatBot(Query)
+
+if __name__ == "__main__":
+    while True:
+        user_input = input("User: ")
+        print(ChatBot(user_input))

@@ -42,7 +42,6 @@ def check_schedule(file_path):
         
         time.sleep(60)
 
-
 def load_AlamTime(file_path):
     schedule = {}
     try:
@@ -52,7 +51,7 @@ def load_AlamTime(file_path):
         print(f"Error loading schedule: {e}")
     return schedule
 
-Alam_path = r"C:\Users\bisha\Desktop\EDITH\Alarm_Data.txt"
+Alam_path = r"C:\Users\bisha\Desktop\AI-EDITH\Data\Alarm_Data.txt"
 
 def check_Alam(Alam_path):
     last_modified = 0

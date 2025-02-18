@@ -2,7 +2,7 @@ import threading
 from os import getcwd
 from Vision.PC_Cam import *
 from Features.Run_app import *
-from Brain.brain import Main_Brain
+from Brain.brain import ChatBot
 from Device_info.info import get_info
 from Features.Brightness_set import *
 from Features.control_volume import *
@@ -22,7 +22,7 @@ spl_numbers = ["11:","12:"]
 def check_inputs():
     output_text = ""
     while True:
-        with open("input.txt","r") as file:
+        with open("Data/input.txt","r") as file:
             input_text = file.read().lower() 
         if input_text != output_text:
             output_text = input_text
@@ -53,7 +53,7 @@ def check_inputs():
                            clear_file()
 
             elif "edit" in output_text or "hey edit" in output_text or "edith" in output_text:
-                response = Main_Brain(output_text)
+                response = ChatBot(output_text)
                 print(response)
                 speak(response)
 

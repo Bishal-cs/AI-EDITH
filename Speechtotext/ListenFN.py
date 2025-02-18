@@ -22,7 +22,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 website = "https://allorizenproject1.netlify.app/"
 # Opening the website in the Chrome browser
 driver.get(website)
-Recog_File = "input.txt"
+Recog_File = r"C:\Users\bisha\Desktop\AI-EDITH\Data\input.txt"
 def listen():
     try:
         start_button = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, 'startButton')))
@@ -49,3 +49,6 @@ def listen():
         print("An error occurred:", e)
     finally:
         driver.quit()
+
+if __name__ == "__main__":
+    listen()

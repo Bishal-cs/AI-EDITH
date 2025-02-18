@@ -8,8 +8,8 @@ from TextToSpeech.F_DF_TTS import speak                                 # for Sp
 from Data.DLG_Data import online_dlg,offline_dlg                        # for a massage online,ofline 
 from Time_operations.through_Alert import check_schedule,check_Alam
 
-Alam_path = f"{getcwd()}\\Alarm_Data.txt"
-file_path = f"{getcwd()}\\schedule.txt"
+Alam_path = r"C:\Users\bisha\Desktop\AI-EDITH\Data\Alarm_Data.txt"
+file_path = r"C:\Users\bisha\Desktop\AI-EDITH\Data\schedule.txt"
 
 ran_online_dlg = random.choice(online_dlg)
 ran_offline_dlg =random.choice(offline_dlg)
