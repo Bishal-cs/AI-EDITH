@@ -6,8 +6,6 @@ requests
 
 psutil
 
-webscout
-
 winotify
 
 lxml_html_clean
@@ -35,4 +33,6 @@ wmi
 scipy
 
 webdriver_manager
+
+selenium
 

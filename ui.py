@@ -30,7 +30,7 @@ class EDITH_UI(QWidget):
         # Microphone image (zoomed and larger)
         self.mic_label = QLabel(self)
         self.add_gif_to_label(self.mic_label,
-                              r"C:\Users\bisha\Desktop\AI-EDITH\cbe227_fb70e39e9dd94e30bbe30c48b2367dd8~mv2.gif",
+                              r"C:\Users\bisha\Desktop\AI-EDITH\Data\cbe227_fb70e39e9dd94e30bbe30c48b2367dd8~mv2.gif",
                               size=(720, 220), alignment=Qt.AlignCenter)  # Initial size and alignment
         self.mic_label.setAlignment(Qt.AlignCenter)
         self.mic_label.mousePressEvent = self.start_listening
@@ -78,7 +78,7 @@ class EDITH_UI(QWidget):
             current_directory = os.path.dirname(os.path.abspath(__file__))
 
             # Specify the path to main.py based on the current directory
-            path_to_main_py = os.path.join(current_directory, r"C:\Users\chatu\Desktop\AI-EDITH\MAIN\main.py")
+            path_to_main_py = os.path.join(current_directory, r"C:\Users\bisha\Desktop\AI-EDITH\Edith.py")
 
             command = ["python", path_to_main_py]
             self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, cwd=current_directory)

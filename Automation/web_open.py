@@ -55,4 +55,4 @@ def open_website(webname):
         print("No websites to open.")
 
 if __name__ == "__main__":
-    open_website("HelpingAI")
+    open_website("gfg")

@@ -7,7 +7,9 @@ except ImportError:
 from json import load, dump
 import datetime
 
-Username = "Bishal Das"
+# Change Your name 
+Username = "Bishal"
+# Change Your Assistant name
 Assistantname = "EDITH"
 GroqAPIKey = "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"
 
@@ -96,5 +98,5 @@ def ChatBot(Query):
 
 if __name__ == "__main__":
     while True:
-        user_input = input("User: ")
+        user_input = input(f"{Username} : ")
         print(ChatBot(user_input))
