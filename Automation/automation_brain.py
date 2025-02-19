@@ -5,7 +5,7 @@ from os import getcwd
 import pyautogui as gui 
 from TextToSpeech import F_DF_TTS
 from TextToSpeech.F_DF_TTS import speak
-from Automation.web_open import openweb
+from Automation.web_open import open_website    
 from Automation.open_app import open_app
 from Automation.Battery import chekc_Percentage
 from Automation.play_music_yt import play_music_youtube
@@ -40,7 +40,7 @@ def open_brain(text):
         text = text.replace("website", "").strip()
         text = text.replace("open website named", "").strip()
         t1 = threading.Thread(target=speak, args=(f"Navigating {text} web",))
-        t2 = threading.Thread(target=openweb, args=(text,))
+        t2 = threading.Thread(target=open_website, args=(text,))
         t1.start()
         t2.start()
         t1.join()
@@ -126,4 +126,3 @@ def Auto_main_brain(text):
         perform_browser_action(text)
         perform_video_control(text)
         perform_scroll_action(text)
-

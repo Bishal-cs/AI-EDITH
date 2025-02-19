@@ -3,11 +3,11 @@ from winotify import Notification, audio # pip install winotify
 
 def Alert(Text):
     toaster = Notification(
-        app_id = "🌐 Edith",
+        app_id = "🌐Edith",
         title = "Alert",
         msg = Text,
         duration ="short",
-        icon = getcwd() + r"C:\Users\bisha\Desktop\AI-EDITH\Data\logo.png"
+        icon = r"C:\Users\bisha\Desktop\AI-EDITH\Data\logo.png"
     )
     toaster.set_audio(audio.Default, loop = False)
 
