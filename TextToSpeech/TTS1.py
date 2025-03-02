@@ -40,6 +40,7 @@ def speak(text):
     except Exception as E:
         print(E)
 
-speak(" Hello, how are you?")
-speak(" I am fine. How are you?")
-speak(" I am good. I am fine. How are you?")
+if __name__ == '__main__':
+    speak(" Hello, how are you?")
+    speak(" I am fine. How are you?")
+    speak(" I am good. I am fine. How are you?")

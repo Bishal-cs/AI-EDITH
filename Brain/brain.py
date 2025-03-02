@@ -11,7 +11,7 @@ import datetime
 Username = "Bishal"
 # Change Your Assistant name
 Assistantname = "EDITH"
-GroqAPIKey = "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"
+GroqAPIKey = "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"
 
 client = Groq(api_key=GroqAPIKey)
 
@@ -98,5 +98,5 @@ def ChatBot(Query):
 
 if __name__ == "__main__":
     while True:
-        user_input = input(f"{Username} : ")
+        user_input = input("User: ")
         print(ChatBot(user_input))

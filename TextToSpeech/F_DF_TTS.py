@@ -51,3 +51,8 @@ def speak(Text, output_file=None):
         asyncio.run(amain(Text, output_file))
     except Exception as e:
         print(e)
+        
+x = '''hii'''
+
+if __name__ == "__main__":
+    speak(x)
