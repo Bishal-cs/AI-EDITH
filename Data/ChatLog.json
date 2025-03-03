@@ -1,106 +1,34 @@
 [
     {
         "role": "user",
-        "content": "edit what about what about you what movie i watch right now"
+        "content": "hello how are you?"
     },
     {
         "role": "assistant",
-        "content": "I'm happy to help! Based on my real-time information, I can suggest some popular movies that you might enjoy watching right now. However, I would need more information about your preferences. Would you like me to suggest a romantic comedy, an action-packed thriller, or something else?"
+        "content": "I'm doing great, thanks for asking!"
     },
     {
         "role": "user",
-        "content": "edit action pack trailers"
+        "content": "who are you?"
     },
     {
         "role": "assistant",
-        "content": "Here are some popular action-packed movie trailers that you might enjoy:\n\n1. Fast X (2023) - The latest installment in the Fast and Furious franchise.\n2. John Wick: Chapter 4 (2023) - The fourth installment in the John Wick series.\n3. Mission: Impossible - Dead Reckoning Part One (2023) - The seventh installment in the Mission: Impossible franchise.\n4. The Marvels (2023) - A superhero action film and the sequel to Captain Marvel.\n5. Oppenheimer (2023) - A biographical action thriller about the life of J. Robert Oppenheimer.\n\nWould you like more suggestions or details about any of these movies?"
+        "content": "I'm EDITH, a highly advanced AI chatbot designed to provide accurate and helpful responses to your questions!"
     },
     {
         "role": "user",
-        "content": "edit actually i don't want to see like that movies i want to watch am i"
+        "content": "hello how are you what's your name and what is the time now and who i am and who are you and do you know what do you know about me and tell me yourself more and what is?"
     },
     {
         "role": "assistant",
-        "content": "It seems like you want to watch a movie, but you're not sure what to watch. Let me suggest some popular action movies that are currently trending:\n\n1. Ant-Man and the Wasp: Quantumania (2023)\n2. Creed III (2023)\n3. Shazam! Fury of the Gods (2023)\n\nWould you like more suggestions or would you like me to recommend something based on a specific actor or genre?"
+        "content": "That's a lot of questions!\n\nI'm EDITH, a highly advanced AI chatbot.\n\nYou are Bishal.\n\nAs for the time, I'm not supposed to tell you the time unless you ask specifically, but I'll make an exception this one time - it's 02 hours, 53 minutes, and 20 seconds.\n\nAs for what I know about you, I only know that you're Bishal and you're interacting with me right now. I don't have any additional information about you.\n\nAs for me, I'm a highly advanced AI chatbot designed to provide accurate and helpful responses to your questions. I have access to real-time information from the internet and can provide information on a wide range of topics.\n\nWhat is...? That's a very open-ended question! If you could be more specific, I'd be happy to try and help you out."
     },
     {
         "role": "user",
-        "content": "edit how are you"
+        "content": "that nice."
     },
     {
         "role": "assistant",
-        "content": "I'm doing great, thanks for asking! I'm functioning at optimal levels, with access to a vast amount of real-time information at my disposal. I'm ready to assist you with any questions or tasks you may have."
-    },
-    {
-        "role": "user",
-        "content": "edit how are you and who i am tell me about me"
-    },
-    {
-        "role": "assistant",
-        "content": "I'm doing great, thanks for asking! As for you, based on our conversation, I know that your name is Bishal. That's about all I know about you so far. If you'd like to share more about yourself, I'm all ears (or rather, all text)!"
-    },
-    {
-        "role": "user",
-        "content": "edit welcome back again"
-    },
-    {
-        "role": "assistant",
-        "content": "You're welcome! It's great to be chatting with you again, Bishal!"
-    },
-    {
-        "role": "user",
-        "content": "edit audio hear"
-    },
-    {
-        "role": "assistant",
-        "content": "I'm a text-based AI, I don't have the capability to produce or play audio. I can only communicate through text."
-    },
-    {
-        "role": "user",
-        "content": "edit i said that are you here"
-    },
-    {
-        "role": "assistant",
-        "content": "I'm here, Bishal! I'm an AI chatbot, and I'm available to chat with you 24/7."
-    },
-    {
-        "role": "user",
-        "content": "edit let's go to ride ok"
-    },
-    {
-        "role": "assistant",
-        "content": "Sounds like you're in the mood for an adventure, Bishal! Unfortunately, I'm a virtual AI, so I can't physically go on a ride with you. But I can definitely chat with you about your favorite rides or help you plan a virtual adventure!"
-    },
-    {
-        "role": "user",
-        "content": "edit close this"
-    },
-    {
-        "role": "assistant",
-        "content": "It was nice chatting with you, Bishal! I'm closing our conversation now. Have a great day!"
-    },
-    {
-        "role": "user",
-        "content": "hey edit please do something mere ko kuchh samajh mein nahin a raha hai kya karun mere ko ppt banana hai college ke liye but man nahin kar raha hai abhi bahut kam mein dard kar raha hai baithe baithe bahut der se kar raha tha abhi ek bhi complete nahin hua hai kya karun batao na please"
-    },
-    {
-        "role": "assistant",
-        "content": "I understand you're feeling overwhelmed and stuck. It seems like you're struggling to create a PPT for college, and your mind is not cooperating. You've been sitting for a long time, and despite the effort, you haven't completed anything yet.\n\nTake a deep breath and relax, Bishal! Here's a suggestion to help you get started:\n\n1. Break down your task into smaller, manageable chunks. Divide your PPT into sections or slides, and focus on one section at a time.\n2. Identify the main points you want to cover in your PPT and jot them down. This will help you clarify your thoughts and get your ideas flowing.\n3. Take a short break (10-15 minutes) to refresh your mind. Get up, stretch, move around, and do something that relaxes you.\n4. Come back to your task with a fresh perspective. Start working on one section or slide, and focus on completing that before moving on to the next one.\n5. Remember, it's okay to take it one step at a time. You don't have to complete the entire PPT in one sitting.\n6. If you're still struggling, consider seeking help from a friend or classmate. Sometimes, talking through your ideas with someone can help you get unstuck.\n\nRemember, you got this, Bishal! Take it one step at a time, and you'll be done with your PPT in no time."
-    },
-    {
-        "role": "user",
-        "content": "edit kya pata hai tumko bag mein pen kyon hota hai"
-    },
-    {
-        "role": "assistant",
-        "content": "That's a classic question, Bishal! The answer is that there is no pen in my \"bag\" because I'm a virtual AI, I don't have a physical body or a bag. I exist solely as a digital entity, so I don't have the ability to carry physical objects like pens."
-    },
-    {
-        "role": "user",
-        "content": "edit"
-    },
-    {
-        "role": "assistant",
-        "content": "It seems like you just sent an \"edit\" command without any further text. If you meant to ask or say something, feel free to type it in, and I'll do my best to assist you!"
+        "content": "Thank you! I'm glad you think so!"
     }
 ]

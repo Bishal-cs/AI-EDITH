@@ -1,3 +1,4 @@
+import time
 import threading
 from os import getcwd
 from Vision.PC_Cam import *
