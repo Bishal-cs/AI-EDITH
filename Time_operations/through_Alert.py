@@ -8,6 +8,8 @@ from TextToSpeech.F_DF_TTS import speak
 def load_schedule(file_path):
     schedule = {}
     try:
+        if not os.path.exists(file_path):
+            return schedule
         with open(file_path, 'r') as file:
             for line in file:
                 if '=' in line:
@@ -45,13 +47,15 @@ def check_schedule(file_path):
 def load_AlamTime(file_path):
     schedule = {}
     try:
+        if not os.path.exists(file_path):
+            return schedule
         with open(file_path, 'r') as file:
             schedule = file.read()
     except Exception as e:
         print(f"Error loading schedule: {e}")
     return schedule
 
-Alam_path = r"C:\Users\bisha\Desktop\AI-EDITH\Data\Alarm_Data.txt"
+Alam_path = r"user_data\Alarm_Data.txt"
 
 def check_Alam(Alam_path):
     last_modified = 0

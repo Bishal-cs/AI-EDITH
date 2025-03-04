@@ -46,7 +46,7 @@ def input_manage(input_text):
         output, time = parse_input(input_text)
 
         if output != "No valid time found in input":
-            save_to_file(output, time, r'C:\Users\bisha\Desktop\AI-EDITH\Data\schedule.txt')
+            save_to_file(output, time, r'user_data\schedule.txt')
             print("Schedule_Data_Saved")
         else:
             print(output)
@@ -78,7 +78,7 @@ def input_manage_Alam(input_text):
         time = parse_input_Alarm(input_text)
 
         if time != "No valid time found in input":
-            save_to_Alarmfile(time, r'C:\Users\bisha\Desktop\AI-EDITH\Data\Alarm_Data.txt')
+            save_to_Alarmfile(time, r'user_data\Alarm_Data.txt')
             print("Schedule_Data_Saved")
         else:
             print ('pass')

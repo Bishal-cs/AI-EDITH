@@ -28,10 +28,10 @@ SystemChatbot = [
 ]
 
 try: 
-    with open(r"Data\ChatLog.json", "r") as f:
+    with open(r"user_data\ChatLog.json", "r") as f:
         messages = load(f)
 except FileNotFoundError:
-    with open(r"Data\ChatLog.json", "w") as f:
+    with open(r"user_data\ChatLog.json", "w") as f:
         dump([], f)
 
 def RealtimeInformation():
@@ -60,7 +60,7 @@ def AnswerModifier(Answer):
 def ChatBot(Query):
     """This function send the user's query to the chatbot and returns the AI's response."""
     try:
-        with open(r"Data\ChatLog.json", "r") as f:
+        with open(r"user_data\ChatLog.json", "r") as f:
             messages = load(f)
         
         messages.append({"role": "user", "content": f"{Query}"})
@@ -85,14 +85,14 @@ def ChatBot(Query):
 
         messages.append({"role": "assistant", "content": Answer})
 
-        with open(r"Data\ChatLog.json", "w") as f:
+        with open(r"user_data\ChatLog.json", "w") as f:
             dump(messages, f, indent=4)
 
         return AnswerModifier(Answer=Answer)
 
     except Exception as e:
         print(f"Error: {e}")
-        with open(r"Data\ChatLog.json", "w") as f:
+        with open(r"user_data\ChatLog.json", "w") as f:
             dump([], f, indent=4)
         return ChatBot(Query)
 

@@ -45,9 +45,10 @@ def play_audio(file_path):
         print(e)
 
 def speak(Text, output_file=None):
+    output_file = r"user_data\speech.mp3"
     try:
         if output_file is None:
-            output_file = os.path.join(os.getcwd(), "speech.mp3")
+            output_file = os.path.join(os.getcwd(),"user_data", "speech.mp3")
         asyncio.run(amain(Text, output_file))
     except Exception as e:
         print(e)

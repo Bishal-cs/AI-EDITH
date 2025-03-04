@@ -23,7 +23,7 @@ spl_numbers = ["11:","12:"]
 def check_inputs():
     output_text = ""
     while True:
-        with open("Data/input.txt","r") as file:
+        with open("user_data/input.txt","r") as file:
             input_text = file.read().lower() 
         if input_text != output_text:
             output_text = input_text

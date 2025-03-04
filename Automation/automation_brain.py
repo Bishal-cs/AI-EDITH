@@ -57,7 +57,7 @@ def open_brain(text):
         t2.join()
 
 def clear_file():
-    with open(r"C:\Users\bisha\Desktop\AI-EDITH\Data\input.txt", "w") as file:
+    with open(r"user_data\input.txt", "w") as file:
         file.truncate(0)
 
 def Auto_main_brain(text):
@@ -72,7 +72,7 @@ def Auto_main_brain(text):
         output_text = ""
         clear_file()
         while True:
-            with open(r"C:\Users\bisha\Desktop\AI-EDITH\Data\input.txt", "r") as file:
+            with open(r"user_data\input.txt", "r") as file:
                 input_text = file.read().lower()
             if input_text != output_text:
                 output_text = input_text
@@ -86,7 +86,7 @@ def Auto_main_brain(text):
         output_text = ""
         clear_file()
         while True:
-            with open(r"C:\Users\bisha\Desktop\AI-EDITH\Data\input.txt", "r") as file:
+            with open(r"user_data\input.txt", "r") as file:
                 input_text = file.read().lower()
             if input_text != output_text:
                 output_text = input_text

@@ -8,7 +8,7 @@ except ModuleNotFoundError:
     from googlesearch import search
 
 try:
-    with open("Data\\websites.json", "r") as file:
+    with open(r"user_data\websites.json", "r") as file:
         websites = json.load(file)
 except FileNotFoundError:
     websites = {}
@@ -23,7 +23,7 @@ def google_search_website(name):
 
 def add_website_to_json(name, url):
     websites[name] = url
-    with open("Data\\websites.json", "w") as file:
+    with open(r"user_data\websites.json", "w") as file:
         json.dump(websites, file, indent=4)
 
 def open_website(webname):
