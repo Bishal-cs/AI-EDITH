@@ -53,7 +53,7 @@ def check_inputs():
                            input_manage_Alam(output_text)
                            clear_file()
 
-            elif "edit" in output_text or "hey edit" in output_text or "edith" in output_text:
+            elif output_text.startswith("hey edit") or output_text.startswith("edit") or output_text.startswith("hello edit"):
                 response = ChatBot(output_text)
                 print(response)
                 speak(response)
@@ -63,7 +63,7 @@ def check_inputs():
                     create_file(output_text)
                     
             elif "what is this" in output_text or "tell me about this" in output_text:
-                        image_path = "captured_image.png"
+                        image_path = "user_data/captured_image.png"
                         if capture_image_and_save(image_path):
                             encoded_image = encode_image_to_base64(image_path)
                             answer = Vbrain(encoded_image)

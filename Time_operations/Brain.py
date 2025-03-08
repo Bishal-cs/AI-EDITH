@@ -3,7 +3,7 @@ from os import getcwd
 
 def parse_input(input_text):
     # Regular expression to extract time in format like "07:30 PM" or "8:00pm"
-    time_regex = r'(\d{1,2}:\d{2} ?(?:AM|PM|am|pm))'
+    time_regex = r'(\d{1,2}:\d{2}\s?(?:AM|PM|am|pm))'
     
     # Find all matches of time in the input text
     times = re.findall(time_regex, input_text)
@@ -17,7 +17,7 @@ def parse_input(input_text):
         updated_input_text = input_text.replace(time_match, "").replace("at", "").replace("tell me", "").replace("Tell me", "").replace("to", "").strip()
         
         # Combine formatted time with command
-        formatted_output = f"{formatted_time} = Sir tis is Your {updated_input_text} time"
+        formatted_output = f"{formatted_time} = Sir its is Your {updated_input_text} time"
         
         return formatted_output, formatted_time
     else:
@@ -52,7 +52,7 @@ def input_manage(input_text):
             print(output)
 def parse_input_Alarm(input_text):
     # Regular expression to extract time in format like "07:30 PM" or "8:00pm"
-    time_regex = r'(\d{1,2}:\d{2} ?(?:AM|PM|am|pm))'
+    time_regex = r'(\d{1,2}:\d{2}\s?(?:AM|PM|am|pm))'
     
     # Find all matches of time in the input text
     times = re.findall(time_regex, input_text)
@@ -79,7 +79,7 @@ def input_manage_Alam(input_text):
 
         if time != "No valid time found in input":
             save_to_Alarmfile(time, r'user_data\Alarm_Data.txt')
-            print("Schedule_Data_Saved")
+            print(f"Alarm saved at {time}")
         else:
-            print ('pass')
+            print("No valid time found in input")
 
