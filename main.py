@@ -16,6 +16,7 @@ def speech():
 
 def Text():
     while True:
+        print("Type to start the conversation")
         Text = input("Bot> ")
         if Text == "q" or Text == "exit":
             break
