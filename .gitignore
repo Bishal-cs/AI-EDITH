@@ -1,2 +1,3 @@
-user_data/*/
+__pycache__/
+user_data/*
 .venv/
