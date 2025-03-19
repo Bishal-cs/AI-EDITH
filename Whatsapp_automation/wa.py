@@ -11,7 +11,7 @@ def clear_file():
     with open(f"{getcwd()}\\input.txt","w") as file:
         file.truncate(0)
         
-vishal = "+918509715190"
+vishal = "+91xxxxxxxxxx"
 
 def send_msg_wa():
     speak("who do you want to send sir ?")
