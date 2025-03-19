@@ -1,5 +1,4 @@
 __pycache__/
-*.pyc
 .venv/
 user_data/*
 !user_data/.gitkeep
