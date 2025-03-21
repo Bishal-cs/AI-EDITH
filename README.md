@@ -33,18 +33,18 @@ git clone https://github.com/Bishal-cs/AI-EDITH.git
 cd AI-EDITH
 ```
 
-### 2. Setup Virtual Environment
+## 2. Setup Virtual Environment
 ```bash
 python -m venv .venv
 .venv\Scripts\activate   # For Windows
 ```
 
-### 3. Install Dependencies
+## 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the AI Assistant
+## 4. Run the AI Assistant
 ```bash
 python main.py
 ```
