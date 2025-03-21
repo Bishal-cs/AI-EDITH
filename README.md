@@ -21,7 +21,7 @@ AI-EDITH/
 ├── Task_Reminder/           # Task reminder and alarm system
 ├── Utilities/               # Helper and utility functions
 ├── .venv/                   # Virtual environment
-├── main.py                  # Entry point to run AI-EDITH
+├── EDITH.py                  # Entry point to run AI-EDITH
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 ```
@@ -61,9 +61,6 @@ python main.py
 
 ## 💡 Contributions
 Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-## 📄 License
-This project is licensed under the MIT License.
 
 ---
 Made with ❤️ by **Bishal Das**
