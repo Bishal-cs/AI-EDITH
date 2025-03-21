@@ -6,12 +6,13 @@ except ImportError:
     from groq import Groq
 from json import load, dump
 import datetime
+from dotenv import dotenv_values
 
-# Change Your name 
-Username = "Bishal"
-# Change Your Assistant name
-Assistantname = "EDITH"
-GroqAPIKey = "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"
+env_vars = dotenv_values(".env")
+
+Username = env_vars.get("Username")
+Assistantname = env_vars.get("Assistantname")
+GroqAPIKey = env_vars.get("GroqAPIKey")
 
 client = Groq(api_key=GroqAPIKey)
 

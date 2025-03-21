@@ -52,6 +52,10 @@ python main.py
 ## ⚙️ Requirements
 - Python 3.10+
 - Internet connection for AI interactions
+- Make a .env file in AI-EDITH then pass the valus 
+- - GroqAPIKey = Your api key here 
+- - Assistantname = your assistent name here 
+- - Username = your name here
 
 ## 🤖 Tech Stack
 - Python
