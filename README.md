@@ -1,60 +1,67 @@
 # AI-EDITH
 
-AI-EDITH is a personal AI Assistant project built using Python. Inspired by fictional assistants like JARVIS, EDITH (Even Dead I'm The Hero) is designed to help automate tasks and provide an interactive experience through voice commands and intelligent functionalities.
+AI-EDITH is a powerful desktop AI assistant designed to make your daily tasks easier by integrating voice commands and smart automation using Python. It combines modern features such as application control, web browsing, information retrieval, and more in a user-friendly, voice-interactive manner.
 
-## 🔍 Features
+## 🔥 Features
+- 🗣️ Voice-controlled AI assistant
+- 💬 Natural language processing using OpenAI API
+- 📂 Application and file opener
+- 🌐 Web search functionality
+- 📑 Note-taking system
+- 🔔 Task reminder and alarm system
+- 📈 System information and status reporting
+- 💻 Runs seamlessly on Windows
 
-- Voice Command Recognition
-- Open Applications and Websites
-- Web Search Integration
-- Customizable Commands
-- Modular Design for Adding More Functionalities
-
-## 🧠 Tech Stack
-
-- Python
-- SpeechRecognition
-- pyttsx3 (Text to Speech)
-- webbrowser
-- os, sys, and other standard libraries
+## 📂 Project Structure
+```
+AI-EDITH/
+├── Automation/               # Scripts to automate opening apps and websites
+├── Core/                    # Core logic for voice handling and AI processing
+├── Notes/                   # Note-taking functionality
+├── Task_Reminder/           # Task reminder and alarm system
+├── Utilities/               # Helper and utility functions
+├── .venv/                   # Virtual environment
+├── EDITH.py                  # Entry point to run AI-EDITH
+├── requirements.txt         # Python dependencies
+└── README.md                # Project documentation
+```
 
 ## 🚀 Getting Started
-
-### 1. Clone the repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/Bishal-cs/AI-EDITH.git
 cd AI-EDITH
-2. Create a Virtual Environment
-bash
-Copy
-Edit
-python -m venv .venv
-3. Activate Virtual Environment
-On Windows:
-bash
-Copy
-Edit
-.venv\Scripts\activate
-4. Install Dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-5. Run the Assistant
-bash
-Copy
-Edit
-python main.py
-📁 Project Structure
-bash
-Copy
-Edit
-AI-EDITH/
-├── .venv/               
-├── Automation/          
-├── main.py              
-├── requirements.txt     
-└── README.md            
-💡 Contributing
+```
 
-Feel free to fork this repository, raise issues or submit pull requests to contribute new features or fix bugs.
+## 2. Setup Virtual Environment
+```bash
+python -m venv .venv
+.venv\Scripts\activate   # For Windows
+```
+
+## 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Run the AI Assistant
+```bash
+python main.py
+```
+
+## ⚙️ Requirements
+- Python 3.10+
+- Internet connection for AI interactions
+
+## 🤖 Tech Stack
+- Python
+- OpenAI API
+- pyttsx3, speech_recognition
+- datetime, os, webbrowser, etc.
+
+## 💡 Contributions
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+---
+Made with ❤️ by **Bishal Das**
+
