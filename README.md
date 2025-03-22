@@ -4,7 +4,7 @@ AI-EDITH is a powerful desktop AI assistant designed to make your daily tasks ea
 
 ## 🔥 Features
 - 🗣️ Voice-controlled AI assistant
-- 💬 Natural language processing using OpenAI API
+- 💬 Natural language processing using Gorq API
 - 📂 Application and file opener
 - 🌐 Web search functionality
 - 📑 Note-taking system
@@ -21,7 +21,7 @@ AI-EDITH/
 ├── Task_Reminder/           # Task reminder and alarm system
 ├── Utilities/               # Helper and utility functions
 ├── .venv/                   # Virtual environment
-├── EDITH.py                  # Entry point to run AI-EDITH
+├── Edith.py                  # Entry point to run AI-EDITH
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 ```
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## 4. Run the AI Assistant
 ```bash
-python main.py
+python Edith.py
 ```
 
 ## ⚙️ Requirements
