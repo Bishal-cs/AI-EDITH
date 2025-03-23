@@ -58,7 +58,7 @@ with open(r"user_data\Voice.html", "w") as f:
 
 current_dir = os.getcwd()
 
-Link = f"{current_dir}/Data/Voice.html"
+Link = f"{current_dir}/user_data/Voice.html"
 
 chrome_options = Options()
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
@@ -113,6 +113,8 @@ def SpeechRecognition():
                 driver.find_element(by=By.ID, value="end").click()
 
                 if InputLanguage.lower() == "en" or "en" in InputLanguage.lower():
+                    with open(r"user_data\input.txt", "w") as file:
+                        file.write(Text.lower())
                     return QueryModifier(Text)
                 else:
                     SetAssistantStatus("Translating.....")

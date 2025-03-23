@@ -6,10 +6,12 @@ import threading
 
 # Voice = "bn-IN-TanishaaNeural"
 # Voice = "ml-IN-SobhanaNeural" 
-# Voice = "en-IN-NeerjaNeural" 
-# Voice = "en-US-AriaNeural"
+# Voice = "en-US-AriaNeural" 
 # Voice = "en-US-MichelleNeural"
-Voice = "en-US-JennyNeural"
+Voice = "en-US-AnaNeural"
+# Voice = "en-US-JennyNeural"
+# Voice = "en-US-EricNeural"
+
 BUFFER_SIZE = 1024
 
 def remove_file(file_path):
@@ -53,7 +55,11 @@ def speak(Text, output_file=None):
     except Exception as e:
         print(e)
         
-x = '''hii'''
+x = '''Name: Microsoft Server Speech Text to Speech Voice (en-GB, ThomasNeural)
+ShortName: en-GB-ThomasNeural
+Gender: Male
+Locale: en-GB
+VoiceTag: {'ContentCategories': ['General'], 'VoicePersonalities': ['Friendly', 'Positive']}'''
 
 if __name__ == "__main__":
     speak(x)
