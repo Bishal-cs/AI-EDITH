@@ -8,8 +8,8 @@ import threading
 # Voice = "ml-IN-SobhanaNeural" 
 # Voice = "en-US-AriaNeural" 
 # Voice = "en-US-MichelleNeural"
-Voice = "en-US-AnaNeural"
-# Voice = "en-US-JennyNeural"
+# Voice = "en-US-AnaNeural"
+Voice = "en-US-JennyNeural"
 # Voice = "en-US-EricNeural"
 
 BUFFER_SIZE = 1024
