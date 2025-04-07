@@ -11,6 +11,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options   
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from dotenv import dotenv_values
+
+env_vars = dotenv_values(".env")
+
+Username = env_vars.get("Username")
 
 InputLanguage = "en-IN"
 
@@ -70,12 +75,6 @@ chrome_options.add_argument("--headless=new")
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
-tempDirPath = rf"{current_dir}/Frontend/Files"
-
-def SetAssistantStatus(Status):
-    with open(rf"{tempDirPath}/Status.data", "w", encoding = 'utf-8') as file:
-        file.write(Status)
-
 def QueryModifier(Query):
     new_query = Query.lower().strip()
     query_words = new_query.split()
@@ -100,30 +99,34 @@ def UnivarsalTranslator(Text):
     english_translation = mt.translate(Text, "en", "auto")
     return english_translation.capitalize()
 
-def SpeechRecognition():
+def listen():
     driver.get("file:///" + Link)
-
     driver.find_element(by=By.ID, value="start").click()
 
+    old_text = ""
+    
     while True:
         try:
             Text = driver.find_element(by=By.ID, value="output").text
-            
-            if Text:
+
+            if Text and Text != old_text:
+                old_text = Text  # Update old text so same result doesn't repeat
+
                 driver.find_element(by=By.ID, value="end").click()
 
                 if InputLanguage.lower() == "en" or "en" in InputLanguage.lower():
                     with open(r"user_data\input.txt", "w") as file:
                         file.write(Text.lower())
-                    return QueryModifier(Text)
+                    print(QueryModifier(Text))
                 else:
-                    SetAssistantStatus("Translating.....")
-                    return QueryModifier(UnivarsalTranslator(Text))
+                    print(QueryModifier(UnivarsalTranslator(Text)))
+
+                # Restart listening
+                driver.find_element(by=By.ID, value="start").click()
 
         except Exception as e:
             pass
 
+
 if __name__ == "__main__":
-    while True: 
-        Text = SpeechRecognition()
-        print(Text)
+    listen()

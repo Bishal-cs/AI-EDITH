@@ -37,3 +37,7 @@ webdriver_manager
 selenium
 
 Appopener
+
+rich
+
+cohere

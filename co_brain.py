@@ -10,7 +10,7 @@ from Features.control_volume import *
 from TextToSpeech.F_DF_TTS import speak
 from Features.Mic_health import mic_health
 from Features.create_file import create_file
-from Speechtotext.ListenFN import listen
+from Speechtotext.SpeechToText import listen
 from Whatsapp_automation.wa import send_msg_wa
 from Features.AI_Image_gen import generate_image
 from Weather_check.Check__weather import get_weather_by_address
@@ -53,7 +53,7 @@ def check_inputs():
                            input_manage_Alam(output_text)
                            clear_file()
 
-            elif output_text.startswith("hey edit") or output_text.startswith("edit") or output_text.startswith("hello edit"):
+            elif output_text.startswith("hey") or "edit" in output_text or output_text.startswith("hello") or output_text.startswith("hi"):
                 response = ChatBot(output_text)
                 print(response)
                 speak(response)
