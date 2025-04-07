@@ -9,8 +9,8 @@ import threading
 # Voice = "en-US-AriaNeural" 
 # Voice = "en-US-MichelleNeural"
 # Voice = "en-US-AnaNeural"
-# Voice = "en-US-JennyNeural"
-Voice = "en-US-EricNeural"
+Voice = "en-US-JennyNeural"
+# Voice = "en-US-EricNeural"
 
 BUFFER_SIZE = 1024
 
@@ -55,11 +55,7 @@ def speak(Text, output_file=None):
     except Exception as e:
         print(e)
         
-x = '''Name: Microsoft Server Speech Text to Speech Voice (en-GB, ThomasNeural)
-ShortName: en-GB-ThomasNeural
-Gender: Male
-Locale: en-GB
-VoiceTag: {'ContentCategories': ['General'], 'VoicePersonalities': ['Friendly', 'Positive']}'''
+x = '''The Bluetooth Fingering is connected sucessfully.'''
 
 if __name__ == "__main__":
     speak(x)
