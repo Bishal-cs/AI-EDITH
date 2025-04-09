@@ -13,3 +13,5 @@ def generate_image(text):
         print('Image saved as generated_image.png')
     else:
         print(f'Failed to retrieve image. Status code: {response.status_code}')
+
+generate_image("A picture of a cat")

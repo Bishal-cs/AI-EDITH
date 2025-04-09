@@ -1,11 +1,11 @@
 from Brain.brain import ChatBot
-from Speechtotext.SpeechToText import SpeechRecognition
+from Speechtotext.ListenFN import listen
 from TextToSpeech.F_DF_TTS import speak
 
 def speech():
     while True:
         print("Listening...")
-        speech = SpeechRecognition()
+        speech = listen()
         speech = speech.strip().lower().strip(".")
         if speech == "q" or speech == "exit":
             break
