@@ -40,4 +40,6 @@ Appopener
 
 rich
 
-cohere
+groq
+
+googlesearch-python
