@@ -137,6 +137,8 @@ def listen():
         while True:
             result = main()  # Call the main function to process speech
             if result:  # Exit the loop if valid text is recognized
+                with open("user_data/input.txt", "w") as f:
+                    f.write(result.strip())
                 return result
     except KeyboardInterrupt:
         # Handle user interruption

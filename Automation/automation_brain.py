@@ -5,8 +5,7 @@ from os import getcwd
 import pyautogui as gui 
 from TextToSpeech import F_DF_TTS
 from TextToSpeech.F_DF_TTS import speak
-from Automation.web_open import open_website    
-from Automation.open_app import open_app
+from Automation.open_app import open_app, close_app
 from Automation.Battery import chekc_Percentage
 from Automation.play_music_yt import play_music_youtube
 from Automation.scroll_system import perform_scroll_action
@@ -26,35 +25,19 @@ def sleep_dev():
 def search_google(text):
     pywhatkit.search(text)
 
-def close():
-    gui.hotkey('alt', 'f4')
-
 def search(text):
     gui.press('/')
     time.sleep(0.3)
     gui.write(text)
 
-def open_brain(text):
-    if "website" in text or "open website named" in text:
-        text = text.replace("open", "").strip()
-        text = text.replace("website", "").strip()
-        text = text.replace("open website named", "").strip()
-        t1 = threading.Thread(target=speak, args=(f"Navigating {text} web",))
-        t2 = threading.Thread(target=open_website, args=(text,))
-        t1.start()
-        t2.start()
-        t1.join()
-        t2.join()
-
-    else:
-        text = text.replace("open", "").strip()
-        text = text.replace("app", "").strip()
-        t1 = threading.Thread(target=speak, args=(f"Navigating {text} app ",))
-        t2 = threading.Thread(target=open_app, args=(text,))
-        t1.start()
-        t2.start()
-        t1.join()
-        t2.join()
+def open_brain(app):
+    app = app.replace("open", "").strip()
+    t1 = threading.Thread(target=open_app, args=(app,))
+    t2 = threading.Thread(target=speak, args=(f"Navigating {app}",))
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
 
 def clear_file():
     with open(r"user_data\input.txt", "w") as file:
@@ -63,9 +46,10 @@ def clear_file():
 def Auto_main_brain(text):
     if text.startswith("open"):
         open_brain(text)
-
-    elif "close this" in text:
-        close()
+    
+    elif "close" in text:
+        app = text.replace("close", "").strip()
+        close_app(app)
 
     elif "play music" in text or "play music on youtube" in text:
         F_DF_TTS.speak("Which song do you want to play,sir?")
@@ -126,3 +110,8 @@ def Auto_main_brain(text):
         perform_browser_action(text)
         perform_video_control(text)
         perform_scroll_action(text)
+
+if __name__ == "__main__":
+    while True:
+        text = input("User> ")
+        open_brain(text)

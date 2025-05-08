@@ -8,8 +8,8 @@ from TextToSpeech.F_DF_TTS import speak
 from Data.DLG_Data import online_dlg,offline_dlg                        
 from Time_operations.through_Alert import check_schedule,check_Alam
 
-Alam_path = r"user_data\Alarm_Data.txt"
-file_path = r"user_data\schedule.txt"
+Alam_path = "user_data/Alarm_Data.txt"
+file_path = "user_data/schedule.txt"
 
 ran_online_dlg = random.choice(online_dlg)
 ran_offline_dlg =random.choice(offline_dlg)

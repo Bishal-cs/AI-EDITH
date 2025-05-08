@@ -4,7 +4,6 @@ from TextToSpeech.F_DF_TTS import speak
 
 def speech():
     while True:
-        print("Listening...")
         speech = listen()
         speech = speech.strip().lower().strip(".")
         if speech == "q" or speech == "exit":

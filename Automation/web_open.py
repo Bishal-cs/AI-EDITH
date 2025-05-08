@@ -7,8 +7,9 @@ except ModuleNotFoundError:
     subprocess.run("pip install googlesearch-python")
     from googlesearch import search
 
+FILE_PATH = "user_data/websites.json"
 try:
-    with open(r"user_data\websites.json", "r") as file:
+    with open(FILE_PATH, "r") as file:
         websites = json.load(file)
 except FileNotFoundError:
     websites = {}
@@ -21,9 +22,9 @@ def google_search_website(name):
         print(f"Error searching for {name}: {e}")
         return None
 
-def add_website_to_json(name, url):
+def add_website_to_json(name, url, FILE_PATH):
     websites[name] = url
-    with open(r"user_data\websites.json", "w") as file:
+    with open(FILE_PATH, "w") as file:
         json.dump(websites, file, indent=4)
 
 def open_website(webname):
@@ -41,7 +42,7 @@ def open_website(webname):
             url = google_search_website(name)
             if url:
                 print(f"Adding new website {url} to websites.json")
-                add_website_to_json(name, url)
+                add_website_to_json(name, url, FILE_PATH)
                 urls_to_open.extend([url] * count)
             else:
                 print(f"No website found for {url} on Google")
@@ -55,4 +56,4 @@ def open_website(webname):
         print("No websites to open.")
 
 if __name__ == "__main__":
-    open_website("gfg")
+    open_website("flipkart")
