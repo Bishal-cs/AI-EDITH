@@ -1,11 +1,11 @@
 import random
 import threading
 from os import getcwd
-from Alert import Alert                                                  
-from co_brain import Edith                                               
-from internet_check import is_Online                                    
-from TextToSpeech.F_DF_TTS import speak                                  
-from Data.DLG_Data import online_dlg,offline_dlg                        
+from Alert import Alert
+from co_brain import Edith
+from internet_check import is_Online
+from TextToSpeech.F_DF_TTS import speak
+from Data.DLG_Data import online_dlg,offline_dlg
 from Time_operations.through_Alert import check_schedule,check_Alam
 
 Alam_path = "user_data/Alarm_Data.txt"

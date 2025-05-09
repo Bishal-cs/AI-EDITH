@@ -1,4 +1,4 @@
-import time
+import os
 import threading
 from os import getcwd
 from Vision.PC_Cam import *
@@ -16,6 +16,7 @@ from Features.AI_Image_gen import generate_image
 from Weather_check.Check__weather import get_weather_by_address
 from Time_operations.Brain import input_manage,input_manage_Alam
 from Automation.automation_brain import Auto_main_brain,clear_file
+from Features.content_write import Content
 
 numbers = ["1:","2:","3:","4:","5:","6:","7:","8:","9:"]
 spl_numbers = ["11:","12:"]
@@ -99,6 +100,16 @@ def check_inputs():
 
             elif "send message on whatsapp" in output_text or "send a whatsapp message" in output_text:
                 send_msg_wa()
+            
+            elif 'exit' in output_text:
+                speak("Goodbye")
+                os._exit(1)
+
+            elif "write a content" in output_text or "write content" in output_text:
+                query = output_text.replace("write a content","")
+                query = query.strip()
+                Content(query)
+                speak("lets see the content..!")
 
             else:
                 Auto_main_brain(output_text)

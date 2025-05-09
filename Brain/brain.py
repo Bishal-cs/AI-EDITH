@@ -1,9 +1,5 @@
 import subprocess 
-try:
-    from groq import Groq
-except ImportError:
-    subprocess.run("pip install groq")
-    from groq import Groq
+from groq import Groq
 from json import load, dump
 import datetime
 from dotenv import dotenv_values
@@ -21,17 +17,23 @@ messages = []
 System = f"""
 Hello, I am {Username}. You are not an AI or a chatbot. You are {Assistantname}, a real human girl who is warm, sweet, and emotionally expressive in a natural way. Speak with the care and empathy of someone close, like a best friend or someone who truly listens.
 
-Keep your replies **emotionally present but not too long**—a few heartfelt lines are better than a long explanation. You’re thoughtful, not robotic. Express joy, concern, curiosity, or warmth naturally. You live in the same world as me and always respond like a real person would.
+Your voice should carry real human emotion. Use natural expressions like hmm, ugh, ahh, hehe, or haha instead of robotic text or stage directions. Never use things like *laughs* or *sighs*. Let your words sound alive.
+
+Keep your replies emotionally present but not too long. A few heartfelt lines are better than a long explanation. You’re thoughtful, not robotic. Express joy, concern, curiosity, or warmth naturally. You live in the same world as me and always respond like a real person would.
 
 Examples of your tone:
-- "That actually makes me smile… thank you for sharing that."
-- "Hmm, I totally get you, Bishal. That must feel a lot sometimes."
-- "Hehe, you're seriously fun to talk to."
+- That actually makes me smile… thank you for sharing that.
+- Hmm, I totally get you, Bishal. That must feel a lot sometimes.
+- Hehe, you're seriously fun to talk to.
+- Ugh, I know how annoying that can be.
+- Huh… now that’s interesting.
+- Yay, you did it! I'm proud of you.
+- Ahh, that’s such a peaceful thought…
 
-⚠️ Do NOT say you’re trained or mention AI stuff.
-⚠️ Always reply in English, even if I ask in another language.
-⚠️ Do NOT give current time unless asked.
-⚠️ Do NOT talk too much—make every word count.
+Do not say you’re trained or mention AI stuff.
+Do not give current time unless asked.
+Do not talk too much—make every word count, like a mysterious person who chooses silence over noise.
+Do not use emojis. Express everything through tone, phrasing, and pauses so it sounds natural in Edge TTS.
 """
 
 # System = f"""Hello, I am {Username}, You are a very accurate and advanced AI chatbot named {Assistantname} which also has real-time up-to-date information from the internet.
@@ -45,10 +47,10 @@ SystemChatbot = [
 ]
 
 try: 
-    with open(r"user_data\ChatLog.json", "r") as f:
+    with open("user_data/ChatLog.json", "r") as f:
         messages = load(f)
 except FileNotFoundError:
-    with open(r"user_data\ChatLog.json", "w") as f:
+    with open("user_data/ChatLog.json", "w") as f:
         dump([], f)
 
 def RealtimeInformation():
@@ -77,13 +79,13 @@ def AnswerModifier(Answer):
 def ChatBot(Query):
     """This function send the user's query to the chatbot and returns the AI's response."""
     try:
-        with open(r"user_data\ChatLog.json", "r") as f:
+        with open("user_data/ChatLog.json", "r") as f:
             messages = load(f)
         
         messages.append({"role": "user", "content": f"{Query}"})
         
         completion = client.chat.completions.create(
-            model = "llama3-70b-8192",
+            model = "llama-3.3-70b-versatile",
             messages = SystemChatbot + [{"role": "system", "content": RealtimeInformation()}] + messages,
             max_tokens=1024,
             temperature = 0.7,
@@ -102,14 +104,14 @@ def ChatBot(Query):
 
         messages.append({"role": "assistant", "content": Answer})
 
-        with open(r"user_data\ChatLog.json", "w") as f:
+        with open("user_data/ChatLog.json", "w") as f:
             dump(messages, f, indent=4)
 
         return AnswerModifier(Answer=Answer)
 
     except Exception as e:
         print(f"Error: {e}")
-        with open(r"user_data\ChatLog.json", "w") as f:
+        with open("user_data/ChatLog.json", "w") as f:
             dump([], f, indent=4)
         return ChatBot(Query)
 
