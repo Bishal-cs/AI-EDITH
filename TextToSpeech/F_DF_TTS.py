@@ -55,7 +55,7 @@ def speak(Text, output_file=None):
     except Exception as e:
         print(e)
         
-x = '''The Bluetooth Fingering is connected sucessfully.'''
-
 if __name__ == "__main__":
-    speak(x)
+    while True:
+        x = input("Enter the text: ")
+        speak(x)
