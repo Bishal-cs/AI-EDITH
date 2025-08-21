@@ -12,7 +12,6 @@ from Features.Mic_health import mic_health
 from Features.create_file import create_file
 from Speechtotext.ListenFN import listen
 from Whatsapp_automation.wa import send_msg_wa
-from Features.AI_Image_gen import generate_image
 from Weather_check.Check__weather import get_weather_by_address
 from Time_operations.Brain import input_manage,input_manage_Alam
 from Automation.automation_brain import Auto_main_brain,clear_file
@@ -91,12 +90,6 @@ def check_inputs():
                     weather_report = get_weather_by_address("Westbengal Hooghly")
                     print(weather_report)
                     speak(weather_report)
-            
-            elif "generate image" in output_text:
-                 text = output_text.replace("generate image","")
-                 text = text.strip()
-                 generate_image(text)
-                 speak("image generated successfully")
 
             elif "send message on whatsapp" in output_text or "send a whatsapp message" in output_text:
                 send_msg_wa()
