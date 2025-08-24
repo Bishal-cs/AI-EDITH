@@ -1,1 +1,0 @@
-print(float(eval(input("Enter an expression: "))))

@@ -23,6 +23,7 @@ dependencies = [
     "rich>=14.0.0",
     "scipy>=1.15.3",
     "selenium>=4.32.0",
+    "streamlit>=1.48.1",
     "webdriver-manager>=4.0.2",
     "winotify>=1.1.0",
     "wmi>=1.5.1",

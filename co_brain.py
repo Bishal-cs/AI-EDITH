@@ -2,20 +2,20 @@ import os
 import threading
 from os import getcwd
 from Vision.PC_Cam import *
-from Features.Run_app import *
 from Brain.brain import ChatBot
+from Features.Mic_health import mic_health
+from Features.Run_app import *
 from Device_info.info import get_info
+from Speechtotext.ListenFN import listen
+from Weather_check.Check__weather import get_weather_by_address
+from TextToSpeech.F_DF_TTS import speak
+from Features.create_file import create_file
 from Features.Brightness_set import *
 from Features.control_volume import *
-from TextToSpeech.F_DF_TTS import speak
-from Features.Mic_health import mic_health
-from Features.create_file import create_file
-from Speechtotext.ListenFN import listen
 from Whatsapp_automation.wa import send_msg_wa
-from Weather_check.Check__weather import get_weather_by_address
-from Time_operations.Brain import input_manage,input_manage_Alam
 from Automation.automation_brain import Auto_main_brain,clear_file
 from Features.content_write import Content
+from Time_operations.Brain import input_manage,input_manage_Alam
 
 numbers = ["1:","2:","3:","4:","5:","6:","7:","8:","9:"]
 spl_numbers = ["11:","12:"]
