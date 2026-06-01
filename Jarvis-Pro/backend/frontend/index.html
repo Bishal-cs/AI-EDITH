@@ -1,0 +1,37 @@
+fr<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis-Pro</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0b1020; }
+      .wrap { max-width: 980px; margin: 0 auto; padding: 18px; }
+      .top { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom: 14px; }
+      .brand { display:flex; align-items:center; gap:12px; }
+      .logo { width:38px; height:38px; border-radius:12px; background: linear-gradient(135deg,#7c3aed,#06b6d4); box-shadow: 0 0 30px rgba(124,58,237,.35); }
+      .title { font-weight:800; letter-spacing:.2px; }
+      .status { color:#9aa4b2; font-size: 12px; }
+      .card { background:#101a33; border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; }
+      .chat { height: 70vh; padding: 14px; overflow:auto; }
+      .msg { margin: 10px 0; display:flex; }
+      .bubble { max-width: 78%; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,.10); white-space: pre-wrap; line-height:1.35; }
+      .user { justify-content:flex-end; }
+      .user .bubble { background: rgba(124,58,237,.18); border-color: rgba(124,58,237,.35); }
+      .ai { justify-content:flex-start; }
+      .ai .bubble { background: rgba(6,182,212,.12); border-color: rgba(6,182,212,.25); }
+      .composer { display:flex; gap:10px; padding: 12px; border-top:1px solid rgba(255,255,255,.08); }
+      input { flex: 1; background:#0b122a; border:1px solid rgba(255,255,255,.10); color:#e8eefc; padding: 12px 12px; border-radius:12px; outline:none; }
+      button { background: linear-gradient(135deg,#7c3aed,#06b6d4); color:white; border:none; padding: 12px 16px; border-radius:12px; font-weight:700; cursor:pointer; }
+      button:disabled { opacity:.55; cursor:not-allowed; }
+      .hint { color:#9aa4b2; font-size: 12px; margin-top: 10px; }
+      .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 12px; border:1px solid rgba(255,255,255,.15); border-bottom-width: 2px; padding:2px 6px; border-radius:8px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
